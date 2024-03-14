@@ -224,5 +224,24 @@ public class CarDAO {
 		List car = query.getResultList();
 		return car;
 	}
+	public static void searchCarByModel() {
+		System.out.println("Enter the car model");
+		String model = scanner.nextLine();
+		entityTransaction.begin();
+		List<CarDTO> car = searchModelfindAll(model);
+		for (CarDTO cars : car) {
+			System.out.println(car);
+		}
+		entityTransaction.commit();
+
+	}
+
+	private static List<CarDTO> searchModelfindAll(String model) {
+		Query query = entityManager.createQuery("SELECT car FROM CarDTO car WHERE model = ?1");
+		query.setParameter(1,model);
+		List car = query.getResultList();
+		return car;
+	}
+
 
 }
