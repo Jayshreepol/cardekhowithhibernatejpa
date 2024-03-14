@@ -55,7 +55,7 @@ public class CarMenu {
 				CarDAO.searchCarByColour();
 				break;
 			case 7:
-				CarDAO.searchCarByPrice();
+				CarDAO.searchCarByModel();
 				break;
 			case 8:
 				mainMenu();
